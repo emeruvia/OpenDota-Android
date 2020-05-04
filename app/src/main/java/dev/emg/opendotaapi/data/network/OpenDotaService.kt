@@ -16,9 +16,9 @@ interface OpenDotaService {
 
     fun create(): OpenDotaService {
       val retrofit = Retrofit.Builder()
-          .addConverterFactory(GsonConverterFactory.create())
-          .baseUrl("https://api.opendota.com/api/")
-          .build()
+        .addConverterFactory(GsonConverterFactory.create())
+        .baseUrl(BASE_URL)
+        .build()
       return retrofit.create(OpenDotaService::class.java)
     }
   }
