@@ -1,24 +1,30 @@
 package dev.emg.opendotaapi.data.model
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
 data class Match(
-  var match_id: Long,
-  var duration: Long,
-  var start_time: Long,
-  var radiant_team_id: Long,
-  var radiant_name: String,
-  var dire_team_id: Long,
-  var dire_name: String,
-  var leagueid: Long,
-  var league_name: String,
-  var series_id: Long,
-  var series_type: Long,
-  var radiant_score: Long,
-  var dire_score: Long,
-  var radiant_win: Boolean,
-  var radiant: Boolean
+  @PrimaryKey
+  @ColumnInfo(name = "match_id") var matchId: Long,
+  @ColumnInfo(name = "duration") var duration: Long,
+  @ColumnInfo(name = "start_time") var startTime: Long,
+  @ColumnInfo(name = "radiant_team_id") var radiantTeamId: Long,
+  @ColumnInfo(name = "radiant_name") var radiantName: String,
+  @ColumnInfo(name = "dire_team_id") var direTeamId: Long,
+  @ColumnInfo(name = "dire_name") var direName: String,
+  @ColumnInfo(name = "leagueid") var leagueId: Long,
+  @ColumnInfo(name = "league_name") var leagueName: String,
+  @ColumnInfo(name = "series_id") var seriesId: Long,
+  @ColumnInfo(name = "series_type") var seriesType: Long,
+  @ColumnInfo(name = "radiant_score") var radiantScore: Long,
+  @ColumnInfo(name = "dire_score") var direScore: Long,
+  @ColumnInfo(name = "radiant_win") var radiantWin: Boolean,
+  @ColumnInfo(name = "radiant") var radiant: Boolean
 ) {
 
   override fun toString(): String {
-    return "Match: id=$match_id, $radiant_name VS $dire_name"
+    return "Match: id=$matchId, $radiantName VS $direName"
   }
 }
