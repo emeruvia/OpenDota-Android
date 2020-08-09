@@ -12,7 +12,7 @@ interface OpenDotaService {
   suspend fun getProMatches(): List<Match>
 
   companion object {
-    private val BASE_URL: String = "https://api.opendota.com/api/"
+    const val BASE_URL: String = "https://api.opendota.com/api/"
 
     fun create(): OpenDotaService {
       val retrofit = Retrofit.Builder()

@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">Open Dota API</string>
+  <string name="radiant_title">Radiant Team:</string>
+  <string name="dire_title">Dire Team:</string>
 </resources>

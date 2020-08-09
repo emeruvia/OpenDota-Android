@@ -1,25 +1,23 @@
 package dev.emg.opendotaapi.ui.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import dev.emg.opendotaapi.data.network.OpenDotaService
+import dev.emg.opendotaapi.data.Repository
+import dev.emg.opendotaapi.data.model.Match
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import timber.log.Timber
 
-class MainViewModel(application: Application) : AndroidViewModel(application) {
+class MainViewModel @ViewModelInject constructor(repository: Repository) : ViewModel() {
 
-  fun getProMatches() {
-    viewModelScope.launch {
-      withContext(Dispatchers.IO) {
-        val service = OpenDotaService.create()
-        val sample = service.getProMatches()
-        for (i in sample) {
-          Timber.d("MainViewModel $i")
-        }
-      }
-    }
-  }
+//  private lateinit var _repository: Repository = repository
+
+  private val _proMatches = repository
+    .getProMatches()
+    .asLiveData(Dispatchers.IO + viewModelScope.coroutineContext)
+
+  val proMatches: LiveData<List<Match>>
+    get() = _proMatches
+
 }
