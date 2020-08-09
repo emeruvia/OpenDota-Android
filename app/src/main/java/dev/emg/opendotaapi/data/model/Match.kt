@@ -1,32 +1,32 @@
 package dev.emg.opendotaapi.data.model
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 @Entity(tableName = Match.TABLE_NAME)
 data class Match(
   @PrimaryKey
-  @ColumnInfo(name = "match_id") var match_id: Long,
-  @ColumnInfo(name = "duration") var duration: Long,
-  @ColumnInfo(name = "start_time") var start_time: Long,
-  @ColumnInfo(name = "radiant_team_id") var radiant_team_id: Long,
-  @ColumnInfo(name = "radiant_name") var radiant_name: String,
-  @ColumnInfo(name = "dire_team_id") var dire_team_id: Long,
-  @ColumnInfo(name = "dire_name") var dire_name: String,
-  @ColumnInfo(name = "leagueid") var leagueid: Long,
-  @ColumnInfo(name = "league_name") var league_name: String,
-  @ColumnInfo(name = "series_id") var series_id: Long,
-  @ColumnInfo(name = "series_type") var series_type: Long,
-  @ColumnInfo(name = "radiant_score") var radiant_score: Long,
-  @ColumnInfo(name = "dire_score") var dire_score: Long,
-  @ColumnInfo(name = "radiant_win") var radiant_win: Boolean,
-  @ColumnInfo(name = "radiant") var radiant: Boolean
-) {
+  @SerializedName("match_id") var matchId: Long,
+  @SerializedName("duration") var duration: Long,
+  @SerializedName("start_time") var startTime: Long,
+  @SerializedName("radiant_team_id") var radiantTeamId: Long,
+  @SerializedName("radiant_name") var radiantName: String,
+  @SerializedName("dire_team_id") var direTeamId: Long,
+  @SerializedName("dire_name") var direName: String,
+  @SerializedName("leagueid") var leagueId: Long,
+  @SerializedName("league_name") var leagueName: String,
+  @SerializedName("series_id") var seriesId: Long,
+  @SerializedName("series_type") var seriesType: Long,
+  @SerializedName("radiant_score") var radiantScore: Long,
+  @SerializedName("dire_score") var direScore: Long,
+  @SerializedName("radiant_win") var radiantWin: Boolean,
+  @SerializedName("radiant") var radiant: Boolean
+) : Serializable {
 
   override fun toString(): String {
-    return "Match: id=$match_id, $radiant_name VS $dire_name"
+    return "Match: id=$matchId, $radiantName VS $direName"
   }
 
   companion object {
