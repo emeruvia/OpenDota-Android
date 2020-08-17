@@ -1,11 +1,13 @@
-package dev.emg.opendotaapi.ui
+package dev.emg.opendotaapi.ui.adapters
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import dev.emg.opendotaapi.data.model.Match
+import dev.emg.opendotaapi.ui.viewholder.ProMatchViewHolder
 
-class ProMatchesAdapter(private val proMatches: List<Match>) :
-  RecyclerView.Adapter<ProMatchViewHolder>() {
+class ProMatchesAdapter(
+  private val proMatches: List<Match>
+) : RecyclerView.Adapter<ProMatchViewHolder>() {
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProMatchViewHolder {
     return ProMatchViewHolder.from(parent)

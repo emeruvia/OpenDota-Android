@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 import dev.emg.opendotaapi.databinding.ActivityMainBinding
 import dev.emg.opendotaapi.ui.fragments.ProMatchesFragment
+import dev.emg.opendotaapi.ui.fragments.ProPlayersFragment
 import dev.emg.opendotaapi.ui.viewmodel.MainViewModel
 
 @AndroidEntryPoint
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
   private fun navigateToProPlayers() {
     supportFragmentManager.beginTransaction()
-      .replace(binding.container.id, ProMatchesFragment())
+      .replace(binding.container.id, ProPlayersFragment())
       .commitAllowingStateLoss()
   }
 }

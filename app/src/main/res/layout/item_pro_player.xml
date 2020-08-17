@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+  <data>
+    <variable
+        name="player"
+        type="dev.emg.opendotaapi.data.model.ProPlayer"
+        />
+  </data>
+  <androidx.cardview.widget.CardView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="4dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginBottom="4dp"
+      >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+      <ImageView
+          android:id="@+id/avatar"
+          android:layout_width="150dp"
+          android:layout_height="150dp"
+          android:contentDescription="@string/avatar"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:src="@color/colorAccent"
+          />
+
+      <TextView
+          android:id="@+id/nickname"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="4dp"
+          android:layout_marginTop="4dp"
+          android:text="@{`Nick Name:` + player.nickName}"
+          android:textSize="16sp"
+          app:layout_constraintStart_toEndOf="@id/avatar"
+          app:layout_constraintTop_toTopOf="@id/avatar"
+          tools:text="Nick Name: XXXXXX"
+          />
+
+      <TextView
+          android:id="@+id/team_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="start"
+          android:text="@{`Team: ` + player.teamName}"
+          android:textSize="16sp"
+          app:layout_constraintStart_toStartOf="@id/nickname"
+          app:layout_constraintTop_toBottomOf="@id/nickname"
+          tools:text="Team Name: XXXX"
+          />
+
+      <TextView
+          android:id="@+id/player_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@{`Plaer Name: ` + player.personName}"
+          android:textSize="16sp"
+          app:layout_constraintStart_toStartOf="@id/team_name"
+          app:layout_constraintTop_toBottomOf="@id/team_name"
+          tools:text="Player Name: XXXXX"
+          />
+
+      <!--      //"last_login": "2019-07-30T17:32:25.668Z",
+      //"full_history_time": "2020-07-31T22:59:42.166Z",
+      //"loccountrycode": "NO",
+      //"last_match_time": "2020-08-09T12:28:17.000Z",
+      //"plus": false,
+      //"name": "HollyWooD",
+      //"country_code": "",
+      //"fantasy_role": 1,
+      //"team_id": 7513779,
+      //"team_name": "BAT Family",
+      //"team_tag": "BAT",
+      //"is_locked": true,
+      //"is_pro": true,
+      //"locked_until": null-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.cardview.widget.CardView>
+</layout>

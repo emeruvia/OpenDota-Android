@@ -10,14 +10,14 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.observe
 import dagger.hilt.android.AndroidEntryPoint
 import dev.emg.opendotaapi.R
-import dev.emg.opendotaapi.databinding.FragmentProMatchesBinding
-import dev.emg.opendotaapi.ui.adapters.ProMatchesAdapter
+import dev.emg.opendotaapi.databinding.FragmentProPlayerBinding
+import dev.emg.opendotaapi.ui.adapters.ProPlayerAdapter
 import dev.emg.opendotaapi.ui.viewmodel.MainViewModel
 
 @AndroidEntryPoint
-class ProMatchesFragment : Fragment() {
+class ProPlayersFragment : Fragment() {
 
-  private lateinit var binding: FragmentProMatchesBinding
+  private lateinit var binding: FragmentProPlayerBinding
   private val viewModel by activityViewModels<MainViewModel>()
 
   override fun onCreateView(
@@ -25,16 +25,17 @@ class ProMatchesFragment : Fragment() {
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View? {
-    binding = DataBindingUtil.inflate(inflater, R.layout.fragment_pro_matches, container, false)
+    binding = DataBindingUtil.inflate(inflater, R.layout.fragment_pro_player, container, false)
     return binding.root
   }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-    viewModel.proMatches.observe(viewLifecycleOwner) { list ->
-      val adapter = ProMatchesAdapter(list)
+    viewModel.proPlayer.observe(viewLifecycleOwner) { list ->
+      val adapter = ProPlayerAdapter(list)
       binding.recyclerview.adapter = adapter
     }
   }
+
 }
