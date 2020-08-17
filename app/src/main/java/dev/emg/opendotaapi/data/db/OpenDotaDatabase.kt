@@ -1,12 +1,13 @@
 package dev.emg.opendotaapi.data.db
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import dev.emg.opendotaapi.data.model.Match
+import dev.emg.opendotaapi.data.utils.Converters
 
 @Database(entities = [Match::class], version = 1, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class OpenDotaDatabase : RoomDatabase() {
 
   abstract fun proMatchesDao(): ProMatchesDao

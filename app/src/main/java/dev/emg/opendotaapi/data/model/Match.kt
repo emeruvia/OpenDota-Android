@@ -2,28 +2,27 @@ package dev.emg.opendotaapi.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
-import java.io.Serializable
+import com.squareup.moshi.Json
 
 @Entity(tableName = Match.TABLE_NAME)
 data class Match(
   @PrimaryKey
-  @SerializedName("match_id") var matchId: Long,
-  @SerializedName("duration") var duration: Long,
-  @SerializedName("start_time") var startTime: Long,
-  @SerializedName("radiant_team_id") var radiantTeamId: Long,
-  @SerializedName("radiant_name") var radiantName: String,
-  @SerializedName("dire_team_id") var direTeamId: Long,
-  @SerializedName("dire_name") var direName: String,
-  @SerializedName("leagueid") var leagueId: Long,
-  @SerializedName("league_name") var leagueName: String,
-  @SerializedName("series_id") var seriesId: Long,
-  @SerializedName("series_type") var seriesType: Long,
-  @SerializedName("radiant_score") var radiantScore: Long,
-  @SerializedName("dire_score") var direScore: Long,
-  @SerializedName("radiant_win") var radiantWin: Boolean,
-  @SerializedName("radiant") var radiant: Boolean
-) : Serializable {
+  @field:Json(name = "match_id") var matchId: Long,
+  @field:Json(name = "duration") var duration: Long,
+  @field:Json(name = "start_time") var startTime: Long,
+  @field:Json(name = "radiant_team_id") var radiantTeamId: Long,
+  @field:Json(name = "radiant_name") var radiantName: String,
+  @field:Json(name = "dire_team_id") var direTeamId: Long,
+  @field:Json(name = "dire_name") var direName: String,
+  @field:Json(name = "leagueid") var leagueId: Long,
+  @field:Json(name = "league_name") var leagueName: String,
+  @field:Json(name = "series_id") var seriesId: Long,
+  @field:Json(name = "series_type") var seriesType: Long,
+  @field:Json(name = "radiant_score") var radiantScore: Long,
+  @field:Json(name = "dire_score") var direScore: Long,
+  @field:Json(name = "radiant_win") var radiantWin: Boolean,
+  @field:Json(name = "radiant") var radiant: Boolean
+) {
 
   override fun toString(): String {
     return "Match: id=$matchId, $radiantName VS $direName"
