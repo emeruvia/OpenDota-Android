@@ -3,9 +3,9 @@ package dev.emg.opendotaapi.ui
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.observe
 import dagger.hilt.android.AndroidEntryPoint
 import dev.emg.opendotaapi.databinding.ActivityMainBinding
+import dev.emg.opendotaapi.ui.fragments.ProMatchesFragment
 import dev.emg.opendotaapi.ui.viewmodel.MainViewModel
 
 @AndroidEntryPoint
@@ -20,9 +20,19 @@ class MainActivity : AppCompatActivity() {
     val view = binding.root
     setContentView(view)
 
-    viewModel.proMatches.observe(this) { list ->
-      val adapter = ProMatchesAdapter(list)
-      binding.recyclerview.adapter = adapter
-    }
+    binding.proMatchesButton.setOnClickListener { navigateToProMatches() }
+    binding.proPlayersButton.setOnClickListener { navigateToProPlayers() }
+  }
+
+  private fun navigateToProMatches() {
+    supportFragmentManager.beginTransaction()
+      .replace(binding.container.id, ProMatchesFragment())
+      .commitAllowingStateLoss()
+  }
+
+  private fun navigateToProPlayers() {
+    supportFragmentManager.beginTransaction()
+      .replace(binding.container.id, ProMatchesFragment())
+      .commitAllowingStateLoss()
   }
 }
