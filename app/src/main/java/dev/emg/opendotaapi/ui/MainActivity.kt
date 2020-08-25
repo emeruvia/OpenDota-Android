@@ -5,6 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 import dev.emg.opendotaapi.databinding.ActivityMainBinding
+import dev.emg.opendotaapi.ui.fragments.LiveMatchesFragment
 import dev.emg.opendotaapi.ui.fragments.ProMatchesFragment
 import dev.emg.opendotaapi.ui.fragments.ProPlayersFragment
 import dev.emg.opendotaapi.ui.viewmodel.MainViewModel
@@ -21,19 +22,26 @@ class MainActivity : AppCompatActivity() {
     val view = binding.root
     setContentView(view)
 
-    binding.proMatchesButton.setOnClickListener { navigateToProMatches() }
-    binding.proPlayersButton.setOnClickListener { navigateToProPlayers() }
+    binding.liveMatchesBtn.setOnClickListener { navigateToLiveMatches() }
+    binding.proMatchesBtn.setOnClickListener { navigateToProMatches() }
+    binding.proPlayersBtn.setOnClickListener { navigateToProPlayers() }
+  }
+
+  private fun navigateToLiveMatches() {
+    supportFragmentManager.beginTransaction()
+      .add(binding.container.id, LiveMatchesFragment())
+      .commitAllowingStateLoss()
   }
 
   private fun navigateToProMatches() {
     supportFragmentManager.beginTransaction()
-      .replace(binding.container.id, ProMatchesFragment())
+      .add(binding.container.id, ProMatchesFragment())
       .commitAllowingStateLoss()
   }
 
   private fun navigateToProPlayers() {
     supportFragmentManager.beginTransaction()
-      .replace(binding.container.id, ProPlayersFragment())
+      .add(binding.container.id, ProPlayersFragment())
       .commitAllowingStateLoss()
   }
 }

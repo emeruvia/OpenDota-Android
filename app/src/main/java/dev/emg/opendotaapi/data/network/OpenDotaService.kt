@@ -9,7 +9,7 @@ import retrofit2.http.Path
 interface OpenDotaService {
 
   @GET("live")
-  suspend fun getLiveGames(): List<LiveMatch>
+  suspend fun getLiveMatches(): List<LiveMatch>
 
 //  @GET("players/{accountId}")
 //  suspend fun getPlayerByAccountId(@Path("accountId") accountId: String): List<Player>

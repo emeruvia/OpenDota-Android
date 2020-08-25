@@ -3,4 +3,6 @@
   <string name="radiant_title">Radiant Team:</string>
   <string name="dire_title">Dire Team:</string>
   <string name="avatar">avatar</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
