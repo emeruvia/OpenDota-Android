@@ -5,14 +5,14 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import dev.emg.opendotaapi.R
-import dev.emg.opendotaapi.data.model.Match
+import dev.emg.opendotaapi.data.model.ProMatch
 import dev.emg.opendotaapi.databinding.ItemProMatchBinding
 
 class ProMatchViewHolder(
   private val binding: ItemProMatchBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-  fun bind(proMatch: Match) {
+  fun bind(proMatch: ProMatch) {
     binding.proMatch = proMatch
   }
 

@@ -4,31 +4,26 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 
-@Entity(tableName = Match.TABLE_NAME)
+@Entity
 data class Match(
   @PrimaryKey
-  @field:Json(name = "match_id") var matchId: Long,
-  @field:Json(name = "duration") var duration: Long,
-  @field:Json(name = "start_time") var startTime: Long,
-  @field:Json(name = "radiant_team_id") var radiantTeamId: Long,
-  @field:Json(name = "radiant_name") var radiantName: String,
-  @field:Json(name = "dire_team_id") var direTeamId: Long,
-  @field:Json(name = "dire_name") var direName: String,
-  @field:Json(name = "leagueid") var leagueId: Long,
-  @field:Json(name = "league_name") var leagueName: String,
-  @field:Json(name = "series_id") var seriesId: Long,
-  @field:Json(name = "series_type") var seriesType: Long,
-  @field:Json(name = "radiant_score") var radiantScore: Long,
-  @field:Json(name = "dire_score") var direScore: Long,
-  @field:Json(name = "radiant_win") var radiantWin: Boolean,
-  @field:Json(name = "radiant") var radiant: Boolean
-) {
-
-  override fun toString(): String {
-    return "Match: id=$matchId, $radiantName VS $direName"
-  }
-
-  companion object {
-    const val TABLE_NAME = "match_table"
-  }
-}
+  @field:Json(name = "match_id") val matchId: Long,
+  @field:Json(name = "player_slot") var playerSlot: Long? = -1,
+  @field:Json(name = "radiant_win") var radiantWin: Boolean? = false,
+  @field:Json(name = "duration") var duration: Long? = -1,
+  @field:Json(name = " game_mode") var gameMode: Long? = -1,
+  @field:Json(name = "lobby_type") var lobbyType: Long? = -1,
+  @field:Json(name = "hero_id") var heroId: Long? = -1,
+  @field:Json(name = "start_time") var startTime: Long? = -1,
+  @field:Json(name = "version") var version: Long? = -1,
+  @field:Json(name = "kills") var kills: Long? = -1,
+  @field:Json(name = "deaths") var deaths: Long? = -1,
+  @field:Json(name = "assists") var assists: Long? = -1,
+  @field:Json(name = "skill") var skill: Long? = -1,
+  @field:Json(name = "lane") var lane: Long? = -1,
+  @field:Json(name = "lane_role") var laneRole: Long? = -1,
+  @field:Json(name = "is_roaming") var isRoaming: Boolean? = false,
+  @field:Json(name = "cluster") var cluster: Long? = -1,
+  @field:Json(name = "leaver_status") var leaverStatus: Long? = -1,
+  @field:Json(name = "party_size") var partySize: Long? = -1
+)

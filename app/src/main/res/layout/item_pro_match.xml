@@ -7,7 +7,7 @@
   <data>
     <variable
         name="proMatch"
-        type="dev.emg.opendotaapi.data.model.Match"
+        type="dev.emg.opendotaapi.data.model.ProMatch"
         />
   </data>
 

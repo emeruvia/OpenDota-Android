@@ -7,7 +7,7 @@ data class PlayerProfile(
   @field:Json(name = "personname") val personName: String? = null,
   @field:Json(name = "name") val name: String? = null,
   @field:Json(name = "plus") val plus: Boolean = false,
-  @field:Json(name = "cheese") val cheese: Long = 0,
+  @field:Json(name = "cheese") val cheese: Long = -1,
   @field:Json(name = "steamid") val steamId: String? = null,
   @field:Json(name = "avatar") val avatar: String? = null,
   @field:Json(name = "avatarMedium") val avatarMedium: String? = null,
