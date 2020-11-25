@@ -1,9 +1,11 @@
 # OpenDota-Android
 Sample project for Android development best practices. App will be an Android client for https://www.opendota.com/
 
-## Tech Stack
+## Technologies Used
 - MVVM Architecture Components
+- Dependency Injection: Dagger Hilt
 - Kotlin
 - Coroutines
 - Retrofit
-- Dependency Injection: Dagger Hilt
+- Room
+- ViewBinding
