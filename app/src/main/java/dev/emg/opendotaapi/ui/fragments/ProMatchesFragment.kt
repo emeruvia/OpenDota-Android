@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.observe
 import dagger.hilt.android.AndroidEntryPoint
 import dev.emg.opendotaapi.R
 import dev.emg.opendotaapi.databinding.FragmentProMatchesBinding

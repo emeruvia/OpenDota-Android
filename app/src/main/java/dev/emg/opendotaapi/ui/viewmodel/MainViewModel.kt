@@ -1,12 +1,12 @@
 package dev.emg.opendotaapi.ui.viewmodel
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.emg.opendotaapi.data.Repository
 import dev.emg.opendotaapi.data.model.LiveMatch
 import dev.emg.opendotaapi.data.model.Match
@@ -16,8 +16,10 @@ import dev.emg.opendotaapi.data.model.ProMatch
 import dev.emg.opendotaapi.data.model.ProPlayer
 import dev.emg.opendotaapi.data.network.OpenDotaService
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
-class MainViewModel @ViewModelInject constructor(repository: Repository) : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(repository: Repository) : ViewModel() {
 
   private val context = Dispatchers.IO + viewModelScope.coroutineContext
 

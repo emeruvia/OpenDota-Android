@@ -3,7 +3,6 @@ package dev.emg.opendotaapi.ui
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.observe
 import dagger.hilt.android.AndroidEntryPoint
 import dev.emg.opendotaapi.databinding.ActivityMainBinding
 import dev.emg.opendotaapi.ui.fragments.LiveMatchesFragment
