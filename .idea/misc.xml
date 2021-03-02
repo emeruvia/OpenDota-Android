@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_live_matches.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_pro_matches.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/fragment_pro_player.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/item_pro_player.xml" value="0.2515625" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
