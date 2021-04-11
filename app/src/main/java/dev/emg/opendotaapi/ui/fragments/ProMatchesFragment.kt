@@ -5,20 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.observe
-import dagger.hilt.android.AndroidEntryPoint
+import dagger.android.support.DaggerFragment
 import dev.emg.opendotaapi.R
 import dev.emg.opendotaapi.databinding.FragmentProMatchesBinding
 import dev.emg.opendotaapi.ui.adapters.ProMatchesAdapter
 import dev.emg.opendotaapi.ui.viewmodel.MainViewModel
+import javax.inject.Inject
 
-@AndroidEntryPoint
-class ProMatchesFragment : Fragment() {
+class ProMatchesFragment : DaggerFragment() {
 
   private lateinit var binding: FragmentProMatchesBinding
-  private val viewModel by activityViewModels<MainViewModel>()
+  @Inject lateinit var viewModel: MainViewModel
 
   override fun onCreateView(
     inflater: LayoutInflater,

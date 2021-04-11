@@ -4,19 +4,19 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
-import dagger.hilt.android.AndroidEntryPoint
+import dagger.android.support.DaggerAppCompatActivity
 import dev.emg.opendotaapi.databinding.ActivityMainBinding
 import dev.emg.opendotaapi.ui.fragments.LiveMatchesFragment
 import dev.emg.opendotaapi.ui.fragments.ProMatchesFragment
 import dev.emg.opendotaapi.ui.fragments.ProPlayersFragment
 import dev.emg.opendotaapi.ui.viewmodel.MainViewModel
 import timber.log.Timber
+import javax.inject.Inject
 
-@AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
   private lateinit var binding: ActivityMainBinding
-  private val viewModel: MainViewModel by viewModels()
+  @Inject lateinit var viewModel: MainViewModel
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
